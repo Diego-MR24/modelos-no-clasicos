@@ -2,7 +2,7 @@
 # Objetivo: Comparar Regresión Clásica (OLS) vs Regresión Robusta (RLM)
 #           para mitigar el efecto de outliers en 'medv'.
 
-library(MASS)       
+library(MASS)
 library(caret)
 library(tidyverse)
 
@@ -38,8 +38,8 @@ rmse_rob <- sqrt(mean((test_data$medv - preds_rob)^2))
 
 # 4. Gráficos de Diagnóstico (Comparación de Residuos)
 # Este gráfico es clave para mostrar cómo la Robusta maneja los errores extremos
-png("plots/02_robusta_vs_ols_residuos.png", width=800, height=400)
-par(mfrow=c(1,2)) # Dividir pantalla en 2 paneles
+png("plots/02_robusta_vs_ols_residuos.png", width = 800, height = 400)
+par(mfrow = c(1, 2)) # Dividir pantalla en 2 paneles
 
 # Panel 1: Residuos OLS
 plot(test_data$medv, test_data$medv - preds_ols,
